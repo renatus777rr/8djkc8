@@ -1,3 +1,9 @@
-kv_namespaces = [
-  { binding = "COUNTER_DB", id = "85a93303d43f418881fc1dc6d6e8955a" }
-]
+name = "decompile-studios-site"
+compatibility_date = "2026-07-21"
+
+[assets]
+directory = "."
+
+[[kv_namespaces]]
+binding = "COUNTER_DB"
+id = "85a93303d43f418881fc1dc6d6e8955a"
