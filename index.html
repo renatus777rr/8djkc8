@@ -39,20 +39,20 @@
     <h1>my domain!</h1>
     <p>currently nothing, but smth will be soon here!</p>
 
-    <!-- Clean, plain text counter -->
+    <!-- The clean text global visitor counter -->
     <div class="counter">
-        visits: <span id="visit-count">loading...</span>
+        visits: <span id="visit-count">1</span>
     </div>
 
     <script>
-        // Uses a free text-only API to get the count
-        // Replace 'decompile_studios_site' with any unique name for your project
-        fetch('https://api.moondb.xyz/hit/decompile_studios_site')
+        // Calls your backend function to increase and fetch the global count
+        fetch('/visit')
             .then(res => res.json())
             .then(data => {
-                document.getElementById('visit-count').innerText = data.hits;
+                document.getElementById('visit-count').innerText = data.count;
             })
             .catch(() => {
+                // Safe fallback text if anything drops out
                 document.getElementById('visit-count').innerText = "1";
             });
     </script>
