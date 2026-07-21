@@ -46,7 +46,7 @@
 
     <script>
         // Calls your backend function to increase and fetch the global count
-        fetch('/visit')
+        fetch('/functions/visit')
             .then(res => res.json())
             .then(data => {
                 document.getElementById('visit-count').innerText = data.count;
