@@ -29,8 +29,8 @@
             margin-bottom: 25px;
         }
         .counter {
-            font-size: 14px;
-            color: #888888;
+            font-size: 16px;
+            color: #555555;
         }
     </style>
 </head>
@@ -39,10 +39,23 @@
     <h1>my domain!</h1>
     <p>currently nothing, but smth will be soon here!</p>
 
-    <!-- This automatically counts and displays your unique page views -->
+    <!-- Clean, plain text counter -->
     <div class="counter">
-        visits: <img src="https://seeyoufarm.com" alt="Hits" style="vertical-align: middle; margin-left: 5px; filter: grayscale(1) contrast(1.5);"/>
+        visits: <span id="visit-count">loading...</span>
     </div>
+
+    <script>
+        // Uses a free text-only API to get the count
+        // Replace 'decompile_studios_site' with any unique name for your project
+        fetch('https://api.moondb.xyz/hit/decompile_studios_site')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('visit-count').innerText = data.hits;
+            })
+            .catch(() => {
+                document.getElementById('visit-count').innerText = "1";
+            });
+    </script>
 
 </body>
 </html>
