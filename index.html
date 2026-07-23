@@ -37,25 +37,8 @@
 <body>
 
     <h1>my domain!</h1>
-    <p>currently nothing, but smth will be soon here!</p>
+    <p>my discord: qcomm, youtube: DecompileStudios, github: renatus777rr.</p>
 
-    <!-- The clean text global visitor counter -->
-    <div class="counter">
-        visits: <span id="visit-count">1</span>
-    </div>
-
-    <script>
-        // Calls your backend function to increase and fetch the global count
-        fetch('/visit')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('visit-count').innerText = data.count;
-            })
-            .catch(() => {
-                // Safe fallback text if anything drops out
-                document.getElementById('visit-count').innerText = "1";
-            });
-    </script>
 
 </body>
 </html>
